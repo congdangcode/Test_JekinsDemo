@@ -1,0 +1,73 @@
+﻿@model webban.Models.Product
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<h2>Create Product</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="ProductName"></label>
+        <input asp-for="ProductName" class="form-control" />
+        <span asp-validation-for="ProductName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductDescription"></label>
+        <textarea asp-for="ProductDescription" class="form-control"></textarea>
+        <span asp-validation-for="ProductDescription" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CategoryId"></label>
+        <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductDiscount"></label>
+        <input asp-for="ProductDiscount" class="form-control" />
+        <span asp-validation-for="ProductDiscount" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ProductPhoto"></label>
+        <input asp-for="ProductPhoto" class="form-control" />
+        <span asp-validation-for="ProductPhoto" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SizeId"></label>
+        <select asp-for="SizeId" class="form-control" asp-items="ViewBag.SizeId"></select>
+        <span asp-validation-for="SizeId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ColorId"></label>
+        <select asp-for="ColorId" class="form-control" asp-items="ViewBag.ColorId"></select>
+        <span asp-validation-for="ColorId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IsArrived"></label>
+        <input asp-for="IsArrived" class="form-check-input" type="checkbox" />
+        <span asp-validation-for="IsArrived" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
